@@ -1,17 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom'; // 导入 BrowserRouter
+// import ReactDOM from 'react-dom';
+import Main from './Main'; // 导入主页面组件
+import 'bootstrap/dist/css/bootstrap.min.css'; // 导入 Bootstrap 样式
+import { createRoot } from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Router>
+    <React.StrictMode>
+      <Main /> {/* 渲染主页面组件 */}
+    </React.StrictMode>
+  </Router>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
