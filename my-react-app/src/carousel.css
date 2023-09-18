@@ -1,0 +1,23 @@
+.carousel-root {
+    width: 100%;
+    margin: auto;
+}
+
+.carousel .carousel-status {
+    display: none;
+}
+
+.carousel .slide .legend {
+    display: none;
+}
+
+.carousel-image {
+    object-fit: cover;
+    /* 填充，剪裁以保持纵横比不变 */
+    object-position: center;
+    /* 居中位置 */
+    width: 100%;
+    /* 图片宽度填充 Carousel */
+    height: 100%;
+    /* 图片高度填充 Carousel */
+}

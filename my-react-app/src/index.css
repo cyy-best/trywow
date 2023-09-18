@@ -12,6 +12,67 @@ code {
     monospace;
 }
 
+/* nav样式 */
+nav.navbar.navbar-expand-lg.navbar-light {
+  background-color: transparent !important;
+  position: absolute;
+  /* 设置绝对定位，使其悬浮在 Carousel 上方 */
+  width: 100%;
+  z-index: 1;
+  /* 设置较高的 z-index，使 Navbar 位于 Carousel 之上 */
+}
+
+
+
+.navbar {
+  position: absolute;
+  /* 设置绝对定位，使其悬浮在 Carousel 上方 */
+  width: 100%;
+  background-color: transparent;
+  /* 设置背景颜色为白色或透明 */
+  z-index: 1;
+  /* 设置较高的 z-index，使 Navbar 位于 Carousel 之上 */
+  border-bottom: 1px solid rgb(221, 219, 219);
+}
+
+.nav-link.nav-text {
+  color: #fff !important;
+  transition: color 0.3s;
+}
+
+.nav-link.nav-text:hover,
+.nav-link.nav-text:hover {
+  color: #bebaba !important;
+}
+
+.nav-link.nav-text .mr-5 {
+  margin-right: 5px;
+}
+
+/* .nav-link.nav-text svg path {
+  fill: white;
+  transition: fill 0.3s;
+}
+
+.nav-link.nav-text:hover svg path,
+.nav-link.nav-text:focus svg path {
+  fill: gray;
+} */
+
+/* 轮播图样式 */
+.slider-wrapper.axis-horizontal {
+  width: 100%;
+  height: 485px;
+}
+
+.carousel-container {
+  position: relative;
+  /* 设置相对定位 */
+  z-index: 0;
+  /* 设置较低的 z-index，使其位于 Navbar 之下 */
+
+}
+
 /* 在屏幕宽度小于760px时，设置卡片高度为三分之一屏幕最长边的长度 */
 @media (max-width: 760px) {
   .card.small-screen-card {

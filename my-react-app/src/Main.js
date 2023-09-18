@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Card from './Card';
 import { Container, Row, Col } from 'react-bootstrap'; // 导入 Bootstrap 组件
 import './index.css';
+import MyCarousel from './Carousel';
 
 function Main() {
 
@@ -31,6 +32,7 @@ function Main() {
     return (
         <div>
             <Navbar />
+            <MyCarousel />
             <Container className="mt-4">
                 <Row>
                     <Col md={3} sm={4} xs={6}>
