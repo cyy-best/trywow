@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 function AppRouter() {
     return (
-        <Router>
+        <div>
             <nav>
                 <ul>
                     <li>
@@ -21,11 +21,12 @@ function AppRouter() {
                     </li>
                 </ul>
             </nav>
-
-            <Route path="/" exact component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-        </Router>
+            <Routes>
+                <Route path="/" exact component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
+            </Routes>
+        </div>
     );
 }
 
