@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './index.css';
-import destiSvg from './svg/desti.svg';
+import './css/index.css';
+import desti from './svg/desti.svg';
+import flight from './svg/flight.svg';
+import dorm from './svg/dorm.svg';
 
 
 function Navbar() {
@@ -16,7 +18,7 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink to="/" className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={destiSvg} alt='destination' className='mr-5' />
+                                    <img src={desti} alt='destination' className='mr-5' />
                                     Destination
                                 </div>
                             </NavLink>
@@ -24,7 +26,7 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink to="/" className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={destiSvg} alt='destination' className='mr-5' />
+                                    <img src={flight} alt='destination' className='mr-5' />
                                     Flight
                                 </div>
                             </NavLink>
@@ -32,7 +34,7 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink to="/" className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={destiSvg} alt='destination' className='mr-5' />
+                                    <img src={dorm} alt='destination' className='mr-5' />
                                     Dom
                                 </div>
                             </NavLink>
@@ -46,21 +48,21 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink to="/" exact className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={destiSvg} alt='destination' className='mr-5' />
+                                    <img src={desti} alt='destination' className='mr-5' />
                                     Home
                                 </div></NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/" exact className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={destiSvg} alt='destination' className='mr-5' />
+                                    <img src={flight} alt='destination' className='mr-5' />
                                     About
                                 </div></NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/" exact className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={destiSvg} alt='destination' className='mr-5' />
+                                    <img src={dorm} alt='destination' className='mr-5' />
                                     Contact
                                 </div></NavLink>
                         </li>

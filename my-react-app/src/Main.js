@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import Navbar from './Navbar';
 import Card from './Card';
+import CardDetail from './pages/CardDetail'; // 新添加的CardDetail组件
 import { Container, Row, Col } from 'react-bootstrap'; // 导入 Bootstrap 组件
-import './index.css';
+import './css/index.css';
 import MyCarousel from './Carousel';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // 导入React Router
 
 function Main() {
 
@@ -31,28 +33,38 @@ function Main() {
 
     return (
         <div>
-            <Navbar />
-            <MyCarousel />
-            <Container className="mt-4">
-                <Row>
-                    <Col md={3} sm={4} xs={6}>
-                        <Card />
-                    </Col>
-                    <Col md={3} sm={4} xs={6}>
-                        <Card />
-                    </Col>
-                    <Col md={3} sm={4} xs={6}>
-                        <Card />
-                    </Col>
-                    <Col md={3} sm={4} xs={6}>
-                        <Card />
-                    </Col>
-                </Row>
-                <Row>
-                    {/* 继续添加更多行，每行 4 个卡片 */}
-                </Row>
-            </Container>
-        </div>
+            <Router>
+                <Navbar />
+
+                <Routes> {/* 使用Routes来包装Route */}
+                    <Route path="/card-detail" element={<CardDetail />} />
+                    <Route path="/" element={ // 使用element属性指定要渲染的组件
+                        <div>
+
+                            <MyCarousel />
+                            <Container className="mt-4">
+                                <Row>
+                                    <Col md={3} sm={4} xs={6}>
+                                        <Card />
+                                    </Col>
+                                    <Col md={3} sm={4} xs={6}>
+                                        <Card />
+                                    </Col>
+                                    <Col md={3} sm={4} xs={6}>
+                                        <Card />
+                                    </Col>
+                                    <Col md={3} sm={4} xs={6}>
+                                        <Card />
+                                    </Col>
+                                </Row>
+                                {/* 继续添加更多行，每行 4 个卡片 */}
+                            </Container>
+                        </div>
+                    } />
+                </Routes>
+
+            </Router>
+        </div >
     );
 }
 
