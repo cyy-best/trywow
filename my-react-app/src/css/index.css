@@ -63,6 +63,37 @@ nav.navbar.navbar-expand-lg.navbar-light {
 
 }
 
+.carousel-cards {
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  /*水平垂直居中*/
+  margin-bottom: 16px;
+
+}
+
+
+.carousel-image1 {
+  background-image: url('../../public/slide1.jpg');
+}
+
+.carousel-image2 {
+  background-image: url('../../public/slide2.jpg');
+}
+
+.carousel-image3 {
+  background-image: url('../../public/slide3.jpg');
+}
+
+.carousel-image4 {
+  background-image: url('../../public/slide4.jpg');
+}
 
 
 
