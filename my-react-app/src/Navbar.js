@@ -18,7 +18,7 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink to="/" className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={desti} alt='destination' className='mr-5' />
+                                    {/* <img src={desti} alt='destination' className='mr-5' /> */}
                                     Destination
                                 </div>
                             </NavLink>
@@ -26,7 +26,7 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink to="/" className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={flight} alt='destination' className='mr-5' />
+                                    {/* <img src={flight} alt='destination' className='mr-5' /> */}
                                     Flight
                                 </div>
                             </NavLink>
@@ -34,7 +34,7 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink to="/" className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={dorm} alt='destination' className='mr-5' />
+                                    {/* <img src={dorm} alt='destination' className='mr-5' /> */}
                                     Dom
                                 </div>
                             </NavLink>
@@ -48,21 +48,21 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink to="/" exact className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={desti} alt='destination' className='mr-5' />
+                                    {/* <img src={desti} alt='destination' className='mr-5' /> */}
                                     Home
                                 </div></NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/" exact className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={flight} alt='destination' className='mr-5' />
+                                    {/* <img src={flight} alt='destination' className='mr-5' /> */}
                                     About
                                 </div></NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/" exact className="nav-link nav-text" activeClassName="active">
                                 <div className="d-flex align-items-center">
-                                    <img src={dorm} alt='destination' className='mr-5' />
+                                    {/* <img src={dorm} alt='destination' className='mr-5' /> */}
                                     Contact
                                 </div></NavLink>
                         </li>

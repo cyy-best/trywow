@@ -8,9 +8,11 @@ import './css/index.css';
 import MyCarousel from './Carousel';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // 导入React Router
 
+
 function Main() {
 
     const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [fetchedData, setFetchedData] = useState([]);
 
     useEffect(() => {
         // 检测屏幕宽度是否小于760px
@@ -23,6 +25,15 @@ function Main() {
 
         // 初始化屏幕尺寸
         handleResize();
+
+        fetch('/api/data')
+            .then((response) => response.json())
+            .then((data) => {
+                setFetchedData(data);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
 
         // 清除事件监听器
         return () => {
