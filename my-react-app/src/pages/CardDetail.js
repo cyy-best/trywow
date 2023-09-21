@@ -8,6 +8,7 @@ import '../css/c-detail.css';
 function CardDetail() {
     return (
         <div className='card-detail'>
+            <Navbar />
             {/* 主要内容 */}
             <header className='f-nav'></header>
             <Container className="section">
