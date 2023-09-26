@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Navbar from './../Navbar';
 import axios from 'axios'; // 导入axios
+// import User from '../../server/models/user';
+
 
 function Register() {
     const [name, setName] = useState('');
@@ -32,8 +34,7 @@ function Register() {
     const handleRegister = async (e) => {
         e.preventDefault();
 
-        // 在这里处理注册逻辑
-        // 创建一个新用户对象并将用户信息存储到数据库中
+        // 创建一个新用户对象
         const newUser = {
             name: name,
             email: email,
@@ -47,10 +48,9 @@ function Register() {
             // 检查响应并处理成功或失败的情况
             if (response.data.success) {
                 // 用户注册成功
-                // 在这里处理注册成功的情况
+                console.log('Registration successful.');
             } else {
                 // 用户注册失败
-                // 在这里处理注册失败的情况
                 console.error('Registration failed:', response.data.message);
             }
         } catch (err) {
@@ -61,13 +61,68 @@ function Register() {
 
     return (
         <div>
-            <Navbar className="register-navbar" />
+            <Navbar />
             <Container className='register-container'>
                 <Row className="justify-content-center">
                     <Col md={6}>
                         <h2>Register</h2>
                         <Form onSubmit={handleRegister}>
-                            {/* ...其他表单输入字段 */}
+                            <Form.Group controlId="formName">
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter your name"
+                                    value={name}
+                                    onChange={(e) => {
+                                        setName(e.target.value);
+                                        validateName(e.target.value);
+                                    }}
+                                    required
+                                />
+                                {nameError && <div className="text-danger">{nameError}</div>}
+                            </Form.Group>
+
+                            <Form.Group controlId="formEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control
+                                    type="email"
+                                    placeholder="Enter email"
+                                    value={email}
+                                    onChange={(e) => {
+                                        setEmail(e.target.value);
+                                        validateEmail(e.target.value);
+                                    }}
+                                    required
+                                />
+                                {emailError && <div className="text-danger">{emailError}</div>}
+                            </Form.Group>
+
+                            <Form.Group controlId="formPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control
+                                    type="password"
+                                    placeholder="Password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                    required
+                                />
+                                <small className="text-muted">
+                                    密码：长度至少为8个字符，必须包含数字、小写字母和大写字母
+                                </small>
+                            </Form.Group>
+
+                            <Form.Group controlId="formConfirmPassword">
+                                <Form.Label>Confirm Password</Form.Label>
+                                <Form.Control
+                                    type="password"
+                                    placeholder="Confirm Password"
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    required
+                                />
+                            </Form.Group>
+
                             <Button variant="primary" type="submit">
                                 Register
                             </Button>

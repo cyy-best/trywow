@@ -30,13 +30,19 @@ function Main() {
         handleResize();
 
         fetch('/api/data')
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then((data) => {
                 setFetchedData(data);
             })
             .catch((error) => {
-                console.error('Error fetching data:', error);
+                console.error('获取数据时发生错误：', error);
             });
+
 
         // 清除事件监听器
         return () => {
