@@ -1,12 +1,3 @@
-.card-detail {
-    background: linear-gradient(gray, white);
-}
-
-.card-detail nav.navbar.navbar-expand-lg.navbar-light {
-    position: fixed;
-    z-index: 0;
-}
-
 .card-detail .f-nav {
     height: 72px;
 }
