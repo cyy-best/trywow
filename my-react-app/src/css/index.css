@@ -86,19 +86,8 @@ nav.navbar.navbar-expand-lg {
 }
 
 
-
-
-/* card样式 */
-
-
-/* 在屏幕宽度小于760px时，设置卡片高度为三分之一屏幕最长边的长度 */
-@media (max-width: 760px) {
-  .card.small-screen-card {
-    height: calc(25vh - 20px);
-    /* 20px 是卡片的上下内边距 */
-  }
-
-  .carousel-root {
-    display: none;
-  }
+.main-page .fix-side{
+ 
+position: sticky;
+top: 250px;
 }
