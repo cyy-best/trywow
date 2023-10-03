@@ -21,3 +21,54 @@
     height: 100%;
     /* 图片高度填充 Carousel */
 }
+
+.carousel-container {
+    position: relative; /* 使搜索框相对于轮播容器定位 */
+}
+
+.search-box {
+    position: absolute;
+    top: 80%; /* 垂直居中 */
+    left: 50%; /* 水平居中 */
+    transform: translate(-50%, -50%); /* 居中定位 */
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+    width: 50%;
+    display: flex;
+}
+
+.search-box input[type="text"] {
+    border: none;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+}
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    outline: none;
+    color: white;
+    background-color: darkgrey;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+}
+@media (max-width: 768px) {
+    .search-box {
+        padding: 8px;
+        font-size: 14px;
+        /* 添加其他样式适应小屏幕 */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        padding: 5px;
+        font-size: 12px;
+        /* 添加其他样式适应更小的屏幕 */
+    }
+}

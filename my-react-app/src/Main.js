@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import { Container, Row, Col } from 'react-bootstrap'; // 导入 Bootstrap 组件
 import './css/index.css';
+import './css/card.css';
 import MyCarousel from './Carousel';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // 导入React Router
 
@@ -62,23 +63,73 @@ function Main() {
                         <div>
                             <Navbar />
                             <MyCarousel />
-                            <Container className="mt-4">
-                                <Row>
-                                    <Col md={3} sm={4} xs={6}>
-                                        <Card />
-                                    </Col>
-                                    <Col md={3} sm={4} xs={6}>
-                                        <Card />
-                                    </Col>
-                                    <Col md={3} sm={4} xs={6}>
-                                        <Card />
-                                    </Col>
-                                    <Col md={3} sm={4} xs={6}>
-                                        <Card />
-                                    </Col>
-                                </Row>
-                                {/* 继续添加更多行，每行 4 个卡片 */}
-                            </Container>
+                            <div className='main-page'>
+                            <Container fluid>
+                                        <Row>
+                                            <Col md={9}>
+                                                <Card />
+                                                <Card />
+                                                <Card />
+                                                <Card />
+                                                <Card />
+                                                
+                                                {/* 其他左侧内容 */}
+                                            </Col>
+                                            <Col md={3} className='fix-side'>
+                                                {/* 右侧内容 */}
+                                                <div>
+                                                    <button
+                                                        className="btn btn-link"
+                                                        onClick={() =>
+                                                            (window.location.href = '/write-travel-note')
+                                                        }
+                                                    >
+                                                        写游记
+                                                    </button>
+                                                </div>
+                                                <div>
+                                                    <button
+                                                        className="btn btn-link"
+                                                        onClick={() => (window.location.href = '/visa')}
+                                                    >
+                                                        办签证
+                                                    </button>
+                                                </div>
+                                                <div>
+                                                    <button
+                                                        className="btn btn-link"
+                                                        onClick={() =>
+                                                            (window.location.href = '/free-travel')
+                                                        }
+                                                    >
+                                                        自由行
+                                                    </button>
+                                                </div>
+                                                <div>
+                                                    <button
+                                                        className="btn btn-link"
+                                                        onClick={() =>
+                                                            (window.location.href = '/group-tour')
+                                                        }
+                                                    >
+                                                        跟团游
+                                                    </button>
+                                                </div>
+                                                <div>
+                                                    <button
+                                                        className="btn btn-link"
+                                                        onClick={() =>
+                                                            (window.location.href = '/customized')
+                                                        }
+                                                    >
+                                                        客制化
+                                                    </button>
+                                                </div>
+                                                {/* 其他右侧内容 */}
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                            </div>
                         </div>
                     } />
                     <Route path="/login" element={<Login />} />
