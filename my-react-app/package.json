@@ -14,6 +14,7 @@
     "mongoose": "^7.5.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
+    "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-responsive-carousel": "^3.2.23",
@@ -53,4 +54,3 @@
     "webpack-cli": "^5.1.4"
   }
 }
-

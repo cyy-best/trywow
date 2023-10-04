@@ -13,12 +13,7 @@ code {
 }
 
 /* nav样式 */
-nav.navbar.navbar-expand-lg {
-  background-color: transparent;
-  width: 100%;
-  z-index: 1;
-  /* 设置较高的 z-index，使 Navbar 位于 Carousel 之上 */
-}
+
 
 .navbar {
 
@@ -84,10 +79,35 @@ nav.navbar.navbar-expand-lg {
 .carousel .carousel-image4 {
   background-image: url('../../public/slide4.jpg');
 }
+.row{
+  height: 1200px;
+}
+
+.main-page {
+  min-height: 100vh; /* 设置最小高度为视窗高度，确保内容可以滚动 */
+  overflow-y: auto; /* 允许内容溢出并显示滚动条 */
+}
+
+.main-page .fix-side {
+  position: sticky;
+  top: 48px;
+}
 
 
-.main-page .fix-side{
- 
-position: sticky;
-top: 250px;
+.main-page .fix-side .btn {
+  margin-top: 20px;
+  text-decoration: none;
+  border: solid 1px gray;
+  width: 100%;
+  height: 48px;
+  color: rgb(61, 59, 59);
+}
+
+.main-page .fix-side .btn:hover, .main-page .fix-side .btn:active{
+  color: bisque;
+  background-color: rgb(61, 59, 59);
+}
+
+.main-page .fix-side .btn .icon {
+  margin-right: 24px;
 }
