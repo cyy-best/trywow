@@ -43,7 +43,7 @@ function Register() {
 
         try {
             // 使用axios发送POST请求来保存用户到数据库
-            const response = await axios.post('/api/register', newUser);
+            const response = await axios.post('/register', newUser);
 
             // 检查响应并处理成功或失败的情况
             if (response.data.success) {
