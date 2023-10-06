@@ -5,7 +5,7 @@ import Card from './Card';
 import CardDetail from './pages/CardDetail'; // 新添加的CardDetail组件
 import Login from './pages/Login';
 import Register from './pages/Register';
-import { Container, Row, Col } from 'react-bootstrap'; // 导入 Bootstrap 组件
+import { Container} from 'react-bootstrap'; // 导入 Bootstrap 组件
 import { Pencil, CreditCard, SuitHeart, People, Puzzle } from 'react-bootstrap-icons';
 import MyCarousel from './Carousel';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // 导入React Routers
@@ -18,19 +18,19 @@ function Main() {
 
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [fetchedData, setFetchedData] = useState([]);
-const [scrollY, setScrollY] = useState(0);
+    const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
 
-    window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
 
     useEffect(() => {
@@ -51,7 +51,7 @@ const [scrollY, setScrollY] = useState(0);
                     throw new Error(`HTTP error! Status: ${response.status}`);
                     return response.json();
                 }
-                
+
             })
             .then((data) => {
                 setFetchedData(data);
@@ -79,74 +79,73 @@ const [scrollY, setScrollY] = useState(0);
                         <div>
                             <Navbar />
                             <MyCarousel />
-                            <div className='main-page'>
-                                <Container fluid>
-                                    <Row>
-                                        <Col md={9}>
-                                            <Card />
-                                            <Card />
-                                            <Card />
-                                            <Card />
-                                            <Card />
+                            <Container fluid className='main-page'>
+                                
+                                    <div md={9} className='note-side'>
+                                        <Card />
+                                        <Card />
+                                        <Card />
+                                        <Card />
+                                        <Card />
 
-                                            {/* 其他左侧内容 */}
-                                        </Col>
-                                        <Col md={3} className='fix-side'>
-                                            {/* 右侧内容 */}
-                                            <div>
-                                                <button
-                                                    className="btn btn-link"
-                                                    onClick={() =>
-                                                        (window.location.href = '/write-travel-note')
-                                                    }
+                                        {/* 其他左侧内容 */}
+                                    </div>
+                                    <div md={3} className='fix-side'>
+                                        {/* 右侧内容 */}
+                                        <div>
+                                            <button
+                                                className="btn btn-link"
+                                                onClick={() =>
+                                                    (window.location.href = '/write-travel-note')
+                                                }
 
-                                                >
-                                                    <Pencil className="icon" /> 写游记
-                                                </button>
-                                            </div>
-                                            <div>
-                                                <button
-                                                    className="btn btn-link"
-                                                    onClick={() => (window.location.href = '/visa')}
-                                                >
-                                                    <CreditCard className="icon" />办签证
-                                                </button>
-                                            </div>
-                                            <div>
-                                                <button
-                                                    className="btn btn-link"
-                                                    onClick={() =>
-                                                        (window.location.href = '/free-travel')
-                                                    }
-                                                >
-                                                    <SuitHeart className="icon" />自由行
-                                                </button>
-                                            </div>
-                                            <div>
-                                                <button
-                                                    className="btn btn-link"
-                                                    onClick={() =>
-                                                        (window.location.href = '/group-tour')
-                                                    }
-                                                >
-                                                    <People className="icon" />跟团游
-                                                </button>
-                                            </div>
-                                            <div>
-                                                <button
-                                                    className="btn btn-link"
-                                                    onClick={() =>
-                                                        (window.location.href = '/customized')
-                                                    }
-                                                >
-                                                    <Puzzle className="icon" />客制化
-                                                </button>
-                                            </div>
-                                            {/* 其他右侧内容 */}
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </div>
+                                            >
+                                                <Pencil className="icon" /> 写游记
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button
+                                                className="btn btn-link"
+                                                onClick={() => (window.location.href = '/visa')}
+                                            >
+                                                <CreditCard className="icon" />办签证
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button
+                                                className="btn btn-link"
+                                                onClick={() =>
+                                                    (window.location.href = '/free-travel')
+                                                }
+                                            >
+                                                <SuitHeart className="icon" />自由行
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button
+                                                className="btn btn-link"
+                                                onClick={() =>
+                                                    (window.location.href = '/group-tour')
+                                                }
+                                            >
+                                                <People className="icon" />跟团游
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button
+                                                className="btn btn-link"
+                                                onClick={() =>
+                                                    (window.location.href = '/customized')
+                                                }
+                                            >
+                                                <Puzzle className="icon" />客制化
+                                            </button>
+                                        </div>
+                                        {/* 其他右侧内容 */}
+                                    </div>
+                                
+                            </Container>
+
                         </div>
                     } />
                     <Route path="/login" element={<Login />} />

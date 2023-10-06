@@ -11,13 +11,13 @@ function AppRouter() {
             <nav>
                 <ul>
                     <li>
-                        <NavLink to="/" exact activeClassName="active">Home</NavLink>
+                        <NavLink to="/" exact activeclassname="active">Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/about" activeClassName="active">About</NavLink>
+                        <NavLink to="/about" activeclassname="active">About</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact" activeClassName="active">Contact</NavLink>
+                        <NavLink to="/contact" activeclassname="active">Contact</NavLink>
                     </li>
                 </ul>
             </nav>
