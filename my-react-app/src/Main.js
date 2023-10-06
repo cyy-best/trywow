@@ -18,20 +18,6 @@ function Main() {
 
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [fetchedData, setFetchedData] = useState([]);
-    const [scrollY, setScrollY] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
 
     useEffect(() => {
         // 检测屏幕宽度是否小于760px
