@@ -13,7 +13,7 @@ function Navbar() {
                 <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul className="navbar-nav justify-content-between">
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link nav-text" activeClassName="active">
+                            <NavLink to="/" className="nav-link nav-text" activeclassname="active">
                                 <div className="d-flex align-items-center">
                                     {/* <img src={desti} alt='destination' className='mr-5' /> */}
                                     Destination
@@ -21,7 +21,7 @@ function Navbar() {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link nav-text" activeClassName="active">
+                            <NavLink to="/" className="nav-link nav-text" activeclassname="active">
                                 <div className="d-flex align-items-center">
                                     {/* <img src={flight} alt='destination' className='mr-5' /> */}
                                     Flight
@@ -29,7 +29,7 @@ function Navbar() {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link nav-text" activeClassName="active">
+                            <NavLink to="/" className="nav-link nav-text" activeclassname="active">
                                 <div className="d-flex align-items-center">
                                     {/* <img src={dorm} alt='destination' className='mr-5' /> */}
                                     Dorm
@@ -37,7 +37,7 @@ function Navbar() {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link nav-text" activeClassName="active">
+                            <NavLink to="/" className="nav-link nav-text" activeclassname="active">
                                 <div className="d-flex align-items-center">
                                     {/* <img src={dorm} alt='destination' className='mr-5' /> */}
                                     Gift Shop
@@ -51,28 +51,28 @@ function Navbar() {
                     <ul className="navbar-nav ml-auto justify-content-between">
 
                         <li className="nav-item">
-                            <NavLink to="/" exact className="nav-link nav-text" activeClassName="active">
+                            <NavLink to="/" exact className="nav-link nav-text" activeclassname="active">
                                 <div className="d-flex align-items-center">
                                     {/* <img src={desti} alt='destination' className='mr-5' /> */}
                                     Home
                                 </div></NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/" exact className="nav-link nav-text" activeClassName="active">
+                            <NavLink to="/" exact className="nav-link nav-text" activeclassname="active">
                                 <div className="d-flex align-items-center">
                                     {/* <img src={flight} alt='destination' className='mr-5' /> */}
                                     About
                                 </div></NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/" exact className="nav-link nav-text" activeClassName="active">
+                            <NavLink to="/" exact className="nav-link nav-text" activeclassname="active">
                                 <div className="d-flex align-items-center">
                                     {/* <img src={dorm} alt='destination' className='mr-5' /> */}
                                     Contact
                                 </div></NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/login" exact className="nav-link nav-text" activeClassName="active">
+                            <NavLink to="/login" exact className="nav-link nav-text" activeclassname="active">
                                 <div className="d-flex align-items-center">
                                     {/* <img src={desti} alt='destination' className='mr-5' /> */}
                                     Sign in
