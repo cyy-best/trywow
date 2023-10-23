@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from './NavigationBar';
 import Card from './Card';
 import CardDetail from './pages/CardDetail'; // 新添加的CardDetail组件
 import Login from './pages/Login';
@@ -16,44 +16,6 @@ import './css/card.css';
 
 function Main() {
 
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
-    const [fetchedData, setFetchedData] = useState([]);
-
-    useEffect(() => {
-        // 检测屏幕宽度是否小于760px
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth < 760);
-        };
-
-        // 添加窗口大小变化的事件监听器
-        window.addEventListener('resize', handleResize);
-
-        // 初始化屏幕尺寸
-        handleResize();
-
-        fetch('/api/data')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                    return response.json();
-                }
-
-            })
-            .then((data) => {
-                setFetchedData(data);
-            })
-            .catch((error) => {
-                console.error('获取数据时发生错误：', error);
-            });
-
-
-        // 清除事件监听器
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-
     return (
         <div>
             <Router>
@@ -65,20 +27,12 @@ function Main() {
                         <div>
                             <Navbar />
                             <MyCarousel />
-                            <Container fluid className='main-page'>
-                                
-                                    <div md={9} className='note-side'>
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-
-                                        {/* 其他左侧内容 */}
-                                    </div>
-                                    <div md={3} className='fix-side'>
-                                        {/* 右侧内容 */}
-                                        <div>
+                            <div className='fix-side'>
+                                        {/* 中间内容 */}
+                                        <div className='btn-container'>
+                                            
+                                        </div>
+                                        <div className='btn-container'>
                                             <button
                                                 className="btn btn-link"
                                                 onClick={() =>
@@ -89,7 +43,7 @@ function Main() {
                                                 <Pencil className="icon" /> 写游记
                                             </button>
                                         </div>
-                                        <div>
+                                        <div className='btn-container'>
                                             <button
                                                 className="btn btn-link"
                                                 onClick={() => (window.location.href = '/visa')}
@@ -97,7 +51,7 @@ function Main() {
                                                 <CreditCard className="icon" />办签证
                                             </button>
                                         </div>
-                                        <div>
+                                        <div className='btn-container'> 
                                             <button
                                                 className="btn btn-link"
                                                 onClick={() =>
@@ -107,7 +61,7 @@ function Main() {
                                                 <SuitHeart className="icon" />自由行
                                             </button>
                                         </div>
-                                        <div>
+                                        <div className='btn-container'>
                                             <button
                                                 className="btn btn-link"
                                                 onClick={() =>
@@ -117,7 +71,7 @@ function Main() {
                                                 <People className="icon" />跟团游
                                             </button>
                                         </div>
-                                        <div>
+                                        <div className='btn-container'>
                                             <button
                                                 className="btn btn-link"
                                                 onClick={() =>
@@ -129,6 +83,20 @@ function Main() {
                                         </div>
                                         {/* 其他右侧内容 */}
                                     </div>
+                            <Container fluid className='main-page flex'>
+                            
+                                        <Card />
+                                        <Card />
+                                        <Card />
+                                        <Card />
+                                        <Card />
+                                        <Card />
+                                        <Card />
+                                        <Card />
+                                        <Card />
+                                        <Card />
+
+                                        {/* 其他左侧内容 */}                                   
                                 
                             </Container>
 
