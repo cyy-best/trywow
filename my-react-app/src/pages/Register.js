@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import Navbar from './../Navbar';
+import Navbar from '../NavigationBar';
 import axios from 'axios'; // 导入axios
 // import User from '../../server/models/user';
 

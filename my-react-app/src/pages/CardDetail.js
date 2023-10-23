@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { FaStar, FaHeart, FaExclamationCircle } from 'react-icons/fa'; // 导入一些图标
-import Navbar from './../Navbar';
+import Navbar from '../NavigationBar';
 import '../css/index.css';
 import '../css/c-detail.css';
 
