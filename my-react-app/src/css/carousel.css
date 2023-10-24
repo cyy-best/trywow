@@ -28,11 +28,11 @@
 
 .search-box {
     position: absolute;
-    top: 80%; /* 垂直居中 */
+    top: 5%; /* 垂直居中 */
     left: 50%; /* 水平居中 */
     transform: translate(-50%, -50%); /* 居中定位 */
     background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 阴影效果 */
     width: 50%;
@@ -40,6 +40,7 @@
 }
 
 .search-box input[type="text"] {
+    font-size: 12px;
     border: none;
     width: 100%;
     padding: 5px;
