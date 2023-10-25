@@ -1,11 +1,19 @@
-.card-detail .f-nav {
-    height: 72px;
+.card-detail .container{
+    margin: 16px 48px;
 }
 
-/* .card-detail>.container {
-    margin-top: 32px;
+.card-detail .col-md-9 .main-section{
+    padding: 0 24px;
+}
 
-} */
+.card-detail .col-md-3 {
+    margin-top: 32px;
+    padding-left: 0;
+    
+}
+.card-detail .h3{
+    font-size: 24px;
+}
 
 
 

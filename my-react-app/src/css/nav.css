@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 49px;
-    height: 25px;
+    height: 16px;
     cursor: pointer;
     transition: left 0.4s; /* 添加过渡效果 */
     
@@ -18,14 +18,14 @@
   }
   
   .bar {
-    width: 30px;
-    height: 4px;
+    width: 24px;
+    height: 2px;
     background-color: #363636;
     transition: transform 0.4s, opacity 0.4s; /* 添加过渡效果 */
   }
   
   .hamburger-button.open .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-10px, 9px);
+    transform: rotate(-45deg) translate(-10px, 5px);
   }
   
   .hamburger-button.open .bar:nth-child(2) {
@@ -34,7 +34,7 @@
   }
   
   .hamburger-button.open .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -5px);
+    transform: rotate(45deg) translate(-5px, 0);
   }
   
   .menu {
