@@ -5,6 +5,7 @@ import Card from './Card';
 import CardDetail from './pages/CardDetail'; // 新添加的CardDetail组件
 import Login from './pages/Login';
 import Register from './pages/Register';
+import NewCard from './pages/NewCard';
 import { Container} from 'react-bootstrap'; // 导入 Bootstrap 组件
 import { Pencil, CreditCard, SuitHeart, People, Puzzle } from 'react-bootstrap-icons';
 import MyCarousel from './Carousel';
@@ -23,6 +24,7 @@ function Main() {
 
                 <Routes> {/* 使用Routes来包装Route */}
                     <Route path="/card-detail" element={<CardDetail />} />
+                    <Route path='/new-card' element={<NewCard />} />
                     <Route path="/" element={ // 使用element属性指定要渲染的组件
                         <div>
                             <Navbar />
@@ -36,7 +38,7 @@ function Main() {
                                             <button
                                                 className="btn btn-link"
                                                 onClick={() =>
-                                                    (window.location.href = '/write-travel-note')
+                                                    (window.location.href = '/new-card')
                                                 }
 
                                             >

@@ -1,0 +1,39 @@
+.author-info{
+    color: #999;
+    line-height: 24px;
+    text-decoration: none;
+    padding-bottom: 24px;
+    text-align: center;
+} 
+.author-info .avatar{
+    width: 136px;
+    height: 136px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.avatar img{
+    height: 136px;
+    width: 136px;
+    border: none;
+    vertical-align: middle;
+}
+.avatar i{
+    width: 136px;
+    height: 136px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url('../image/cover.png') 0 0;
+}
+
+.author-info a{
+    font-size: 24px;
+    margin: 20px 0;
+    color: #666;
+}
+.author-info .author{
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: capitalize;
+}
