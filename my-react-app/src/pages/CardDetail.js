@@ -7,28 +7,7 @@ import '../css/c-detail.css';
 
 function CardDetail() {
     const title = 'detail-title';
-    const likes = 50;
-    const states = {
-        comments: [
-            { id: 1, name: 'jack', content: 'first comment' },
-            { id: 2, name: 'tom', content: 'second comment' },
-            { id: 3, name: 'jerry', content: 'third comment' }
-
-        ]
-    }
-
-    const renderList = () => {
-        return states.comments.length === 0 ?
-        (<div className='no-comments'>No comments</div>)
-        : (<ul className="comment-list">
-            {states.comments.map(items => (
-                <li key={items.id}>
-                    <h6 >{items.name}</h6>
-                    <p>{items.content}</p>
-                </li>
-            ))}
-        </ul>)
-    }
+    
     return (
         <div className='card-detail'>
             <Navbar />
@@ -62,7 +41,6 @@ function CardDetail() {
                                     vestibulum nunc fermentum. Vivamus at dui et metus ullamcorper
                                     auctor. Sed vel purus ut ex consectetur dignissim.
                                 </p>
-                                <p> liked {likes} times</p>
                             </div>
                             <Row>
                                 <Col>
@@ -79,9 +57,7 @@ function CardDetail() {
                         <div className='side-section d-flex flex-column justify-content-between'>
                             <Author />
                             {/* 条件渲染 三元表达式*/}
-                            {
-                                renderList()
-                            }
+                            
 
                             <Comment />
                         </div>
