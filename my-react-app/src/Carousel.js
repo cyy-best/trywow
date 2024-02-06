@@ -32,7 +32,7 @@ function MyCarousel() {
     }, []);
     return (
         <div className='carousel-container'>
-            <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} autoPlay={true} interval={5000} transitionTime={500}>
+            <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} autoPlay={true} interval={3000} transitionTime={500}>
                 <div className='carousel-cards carousel-image1'></div>
                 <div className='carousel-cards carousel-image2'></div>
                 <div className='carousel-cards carousel-image3'></div>
