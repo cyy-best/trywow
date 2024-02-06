@@ -33,7 +33,12 @@ function Comment() {
 
     const addComment= () => {
         const {comments,userName,userContent} = state
-        //
+
+        //非空校验
+        if (userName.trim() === '' || userContent.trim() ===''){
+            alert('please input the name and comments')
+            return
+        }
         const newComments = [{
             id:Math.random(),
             name: userName,
