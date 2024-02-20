@@ -24,8 +24,11 @@
 
 .carousel-container {
     position: relative; /* 使搜索框相对于轮播容器定位 */
+    height: 85vh;
 }
-
+.carousel.carousel-slider{
+    height: 85vh;
+}
 .search-box {
     position: absolute;
     top: 5%; /* 垂直居中 */
