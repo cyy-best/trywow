@@ -1,8 +1,9 @@
 /* ImageUploader.css */
 
 .image-uploader-container {
-    max-width: 600px;
-    margin: 0 auto;
+    width: 80vw;
+    min-height: 65vh;
+    margin: 10px auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -43,12 +44,15 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-  
-  button {
-    display: block;
-    margin-top: 10px;
+  .btn-group{
+    flex-direction: row;
+    
+  }
+  .btn-group button{
+    /* display: block; */
+    margin: 10px 10px 10px 0;
     padding: 10px;
-    background-color: #4caf50;
+    background-color: #4f8663;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -56,6 +60,6 @@
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #1c5843;
   }
   
