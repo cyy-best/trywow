@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Navbar from '../NavigationBar';
+import '../css/nav.css';
 import '../css/newcard.css'
 
 function NewCard() {
@@ -32,25 +34,39 @@ function NewCard() {
         setSelectedImages(updatedImages);
     };
 
+    const handleSaveDraft = () => {
+        const draftData = {
+            title,
+            selectedImages,
+            text,
+        };
+        localStorage.setItem('draftData',JSON.stringify(draftData))
+    }
+
     const handlePublish = () => {
-        // 在这里执行发布逻辑，你可以将选定的图片、标题和文字传递到后端或执行其他操作
-        console.log('Title:', title);
+        // 在这里执行发布逻辑
+        if(!title || selectedImages.length ===0  || !text){
+            alert('please add title, text and at least one image')
+        }
+        else{console.log('Title:', title);
         console.log('Selected Images:', selectedImages);
         console.log('Text:', text);
-        // 这里可以添加发送请求的代码
+        // 添加发送请求的代码
 
         // 清空选择
         setSelectedImages([]);
         setText('');
-        setTitle('');
+        setTitle('');}
     };
     return (
+        <div className='new-card-page'>
+        <Navbar></Navbar>
         <div className="image-uploader-container">
-            <input type="text" placeholder="添加标题" value={title} onChange={handleTitleChange} />
+            <input type="text" placeholder="title here" value={title} onChange={handleTitleChange} />
             <input type="file" accept="image/*" onChange={handleImageChange} multiple />
             <div className="selected-images-container">
                 {selectedImages.map((image, index) => (
-                    <div key={index} className="image-preview">
+                    <div key={index} className={`image-preview ${index ===0 ? 'cover-image': ''}`}>
                         <img src={image} alt={`Selected ${index + 1}`} />
                         <button onClick={() => handleRemoveImage(index)}>删除</button>
                     </div>
@@ -58,8 +74,12 @@ function NewCard() {
             </div>
 
             <textarea placeholder="Write down your experience here..." value={text} onChange={handleTextChange}></textarea>
-
-            <button onClick={handlePublish}>发布</button>
+            <div className='btn-group'>
+            <button className='pulish-btn' onClick={handlePublish}>Publish</button>
+            <button className='save-draft' onClick={handleSaveDraft}> SaveDraft</button>
+            </div>       
+            
+        </div>
         </div>
     )
 }
