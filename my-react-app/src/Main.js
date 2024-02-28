@@ -9,13 +9,21 @@ import NewCard from './pages/NewCard';
 import { Container} from 'react-bootstrap'; // 导入 Bootstrap 组件
 import { Pencil, CreditCard, SuitHeart, People, Puzzle } from 'react-bootstrap-icons';
 import MyCarousel from './Carousel';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // 导入React Routers
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'; // 导入React Routers
 import './css/index.css';
 import './css/card.css';
+import jsonData from './db.json';
 
 
 
 function Main() {
+    
+
+    const renderCards = () => {
+        return jsonData.posts.map((post) => (
+            <Card key={post.id} post={post}/>
+        ));
+    };
 
     return (
         <div>
@@ -87,18 +95,7 @@ function Main() {
                                     </div>
                             <Container fluid className='main-page flex'>
                             
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-
-                                        {/* 其他左侧内容 */}                                   
+                                    {renderCards()}                                
                                 
                             </Container>
 

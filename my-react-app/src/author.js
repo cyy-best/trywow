@@ -7,7 +7,7 @@ function Author() {
     return (
         <div className="author-info">
             <div className='avatar'>
-                <img src={pic} ></img>
+                <img src={pic} alt="avatar"></img>
                 <i></i>
             </div>
             <Link style={{textDecoration:'none'}}><h3 className='h3 author'>author</h3></Link>

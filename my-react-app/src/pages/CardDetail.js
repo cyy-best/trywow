@@ -1,12 +1,16 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import Navbar from '../NavigationBar';
-import Author from '../author';
-import Comment from '../comment';
+import Author from '../Author';
+import Comment from '../Comment';
 import '../css/index.css';
 import '../css/c-detail.css';
+import { useLocation } from 'react-router-dom';
 
 function CardDetail() {
+    const location = useLocation();
     const title = 'detail-title';
+    const { post = null } = location.state;
+    console.log(post)
     
     return (
         <div className='card-detail'>
@@ -23,29 +27,19 @@ function CardDetail() {
                             <div className='img-container'>
                                 <div className='card-image image1'></div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                                    facilisi. Sed at efficitur odio. Integer eget lorem ac quam
-                                    malesuada ullamcorper. Quisque feugiat diam a odio euismod, eu
-                                    vestibulum nunc fermentum. Vivamus at dui et metus ullamcorper
-                                    auctor. Sed vel purus ut ex consectetur dignissim.
+                                    {post.content}
                                 </p>
                                 <div className='card-image image2'></div>
                                 <div className='card-image image3'></div>
 
 
 
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                                    facilisi. Sed at efficitur odio. Integer eget lorem ac quam
-                                    malesuada ullamcorper. Quisque feugiat diam a odio euismod, eu
-                                    vestibulum nunc fermentum. Vivamus at dui et metus ullamcorper
-                                    auctor. Sed vel purus ut ex consectetur dignissim.
-                                </p>
+                                
                             </div>
                             <Row>
                                 <Col>
-                                    <p>Published on: September 1, 2023</p>
-                                    <p>Author: John Doe</p>
+                                    <p>Published on: {post.date}</p>
+                                    <p>Author: {post.author.name}</p>
                                 </Col>
                             </Row>
                         </div>
