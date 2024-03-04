@@ -8,9 +8,7 @@ import { useLocation } from 'react-router-dom';
 
 function CardDetail() {
     const location = useLocation();
-    const title = 'detail-title';
     const { post = null } = location.state;
-    console.log(post)
     
     return (
         <div className='card-detail'>
@@ -23,7 +21,7 @@ function CardDetail() {
                     {/* 中间图文内容 */}
                     <Col md={9} >
                         <div className='main-section'>
-                            <h3 className='h3'>{title}</h3>
+                            <h3 className='h3'>{post.title}</h3>
                             <div className='img-container'>
                                 <div className='card-image image1'></div>
                                 <p>
