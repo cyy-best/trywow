@@ -47,3 +47,16 @@
 .side-section {
     position: fixed;
 }
+
+.edit{
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.edit svg{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}

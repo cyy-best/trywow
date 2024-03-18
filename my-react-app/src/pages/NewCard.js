@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import Navbar from '../NavigationBar';
 import '../css/nav.css';
-import '../css/newcard.css'
+import '../css/newcard.css';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 function NewCard() {
     const [selectedImages, setSelectedImages] = useState([]);
     const [text, setText] = useState('');
     const [title, setTitle] = useState(''); // 新增标题状态
-
+    const [value,setValue] = useState('');
+    console.log(value);
 
     const handleImageChange = (e) => {
         const files = e.target.files;
@@ -63,9 +66,13 @@ function NewCard() {
         <Navbar></Navbar>
         <div className="image-uploader-container">
             <input type="text" placeholder="title here" value={title} onChange={handleTitleChange} />
-            <input type="file" accept="image/*" onChange={handleImageChange} multiple />
+            <input type="file" accept="image/*" id='file' onChange={handleImageChange} multiple />
+            {/* <label htmlFor='file'>Upload image</label> */}
+            <ReactQuill className='editor' theme="snow" value={value} onChange = {setValue} />
             <div className="selected-images-container">
+            
                 {selectedImages.map((image, index) => (
+                    
                     <div key={index} className={`image-preview ${index ===0 ? 'cover-image': ''}`}>
                         <img src={image} alt={`Selected ${index + 1}`} />
                         <button onClick={() => handleRemoveImage(index)}>删除</button>
@@ -73,7 +80,6 @@ function NewCard() {
                 ))}
             </div>
 
-            <textarea placeholder="Write down your experience here..." value={text} onChange={handleTextChange}></textarea>
             <div className='btn-group'>
             <button className='pulish-btn' onClick={handlePublish}>Publish</button>
             <button className='save-draft' onClick={handleSaveDraft}> SaveDraft</button>
