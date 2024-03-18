@@ -2,9 +2,12 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Navbar from '../NavigationBar';
 import Author from '../Author';
 import Comment from '../Comment';
+import Menu from '../Menu';
 import '../css/index.css';
 import '../css/c-detail.css';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { PencilSquare} from 'react-bootstrap-icons';
+import { TrashFill } from 'react-bootstrap-icons';
 
 function CardDetail() {
     const location = useLocation();
@@ -38,6 +41,17 @@ function CardDetail() {
                                 <Col>
                                     <p>Published on: {post.date}</p>
                                     <p>Author: {post.author.name}</p>
+                                    
+                                </Col>
+                                <Col>
+                                    
+                                    <div className="edit">
+                                        <Link to={`write?edit=2`}>
+                                        <PencilSquare className='edit-icon'/>
+                                        </Link>
+                                    
+                                    <TrashFill className='delete-icon'/>
+                                    </div>
                                 </Col>
                             </Row>
                         </div>
@@ -52,7 +66,9 @@ function CardDetail() {
                             
 
                             <Comment />
+                            <Menu />
                         </div>
+                        
 
                     </Col>
                 </Row>
