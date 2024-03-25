@@ -6,6 +6,7 @@ import CardDetail from './pages/CardDetail'; // 新添加的CardDetail组件
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NewCard from './pages/NewCard';
+import Books from './pages/Books';
 import { Container} from 'react-bootstrap'; // 导入 Bootstrap 组件
 import { Pencil, CreditCard, SuitHeart, People, Puzzle } from 'react-bootstrap-icons';
 import MyCarousel from './Carousel';
@@ -103,6 +104,7 @@ function Main() {
                     } />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="books" element={<Books />} />
                 </Routes>
 
             </Router>
