@@ -1,0 +1,63 @@
+.register-container {
+    background-color: #f0f8f4; /* 清新的绿色底色 */
+    padding: 20px; /* 内边距 */
+    border-radius: 10px; /* 边框圆角 */
+  }
+  .register-container h2{
+    text-align: center;
+  }
+  
+  /* 表单输入框样式 */
+  input[type='text'],
+  input[type='email'],
+  input[type='password'] {
+    width: 100%; /* 宽度100% */
+    margin-bottom: 10px; /* 底部间距 */
+    padding: 10px; /* 内边距 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 5px; /* 边框圆角 */
+    box-sizing: border-box; /* 盒模型 */
+  }
+  
+  /* 按钮样式 */
+  button {
+    width: 100%; /* 宽度100% */
+    padding: 10px; /* 内边距 */
+    border: none; /* 去除边框 */
+    border-radius: 5px; /* 边框圆角 */
+    background-color: #007bff; /* 蓝色背景 */
+    color: #fff; /* 文字颜色 */
+    cursor: pointer; /* 鼠标指针样式 */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* 鼠标悬停时的背景色 */
+  }
+  
+  /* 链接样式 */
+  span {
+    display: block; /* 块级显示 */
+    margin-top: 10px; /* 顶部间距 */
+    text-align: center; /* 文本居中 */
+  }
+  .register-container p{
+    color: red;
+    text-align: center;
+    font-weight: 500;
+    padding: 16px 0 0 0 ;
+  }
+  
+  span a {
+    color: #007bff; /* 链接文字颜色 */
+  }
+  
+  span a:hover {
+    text-decoration: underline; /* 鼠标悬停时下划线 */
+  }
+
+  @media screen and (max-width: 768px) {
+    .register-container {
+      padding: 10px; /* 在小屏幕上减少内边距 */
+      margin: 0 30px;
+    }
+  }

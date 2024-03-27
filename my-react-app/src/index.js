@@ -5,13 +5,18 @@ import Main from './Main'; // 导入主页面组件
 import 'bootstrap/dist/css/bootstrap.min.css'; // 导入 Bootstrap 样式
 import { createRoot } from 'react-dom/client';
 import './css/index.css';
+import { AuthContextProvider } from './context/authContext';
 
 const root = createRoot(document.getElementById('root'));
 
 root.render(
 
   <React.StrictMode>
-    <Main /> {/* 渲染主页面组件 */}
+    <AuthContextProvider>
+      <Main /> {/* 渲染主页面组件 */}
+
+    </AuthContextProvider>
+
   </React.StrictMode>
 
 );

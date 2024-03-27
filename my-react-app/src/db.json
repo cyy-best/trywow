@@ -12,18 +12,7 @@
         "image": "./image/slide1.jpg",
         "date": "2023-01-01"
       },
-      {
-        "id": 1,
-        "title": "title1",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut erat purus. Proin ligula ligula, egestas et sapien finibus,mollis rhoncus mauris. Sed ac massa vel felis ultricies bibendum posuere ac quam. Nulla dapibus libero quam, sed vulputate nulla interdum a. Aenean vulputate justo quis dui cursus, ac egestas neque rutrum. Maecenas auctor vel justo sed iaculis. Aliquam quis rhoncus turpis, vel cursus enim. Etiam convallis consequat nibh, sed facilisis turpis tempor ut.",
-        "author": {
-          "id": 1,
-          "name": "Yu Cao",
-          "avatar": "./image/yuCao.jpg"
-        },
-        "image": "./image/slide1.jpg",
-        "date": "2023-01-01"
-      },
+      
       {
         "id": 2,
         "title": "title2",

@@ -1,6 +1,9 @@
 import express from "express";
 import mysql from "mysql";
-import cors from "cors";
+import postRoutes from "./routes/posts.js";
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
+import cookieParser from "cookie-parser";
 
 const app = express()
 
@@ -12,31 +15,10 @@ const db = mysql.createConnection({
 })
 
 app.use(express.json())
-app.use(cors())
-
-app.get("/",(req,res)=>{
-    res.jsonp("hello thisis backend")
-    
-})
-
-app.get("/books",(req,res)=>{
-    const q = "SELECT * FROM books"
-    db.query(q,(err,data)=>{
-        if(err) return res.json(err)
-        return res.json(data)
-    })
-})
-
-app.post("/books",(req,res)=>{
-    const q = "INSERT INTO books (`title`,`desc`,`cover`) VALUES (?)"
-    const values = [req.body.title,
-        req.body.desc,
-        req.body.cover]
-    db.query(q,[values],(err,data)=>{
-        if(err) return res.json(err)
-        return res.json("books have been created")
-    })
-})
+app.use(cookieParser())
+app.use("/api/posts",postRoutes)
+app.use("/api/users",userRoutes)
+app.use("/api/auth",authRoutes)
 
 
 
